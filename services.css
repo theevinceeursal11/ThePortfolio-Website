@@ -1,0 +1,49 @@
+.bb-alert {
+  background: #101010;
+  color: #e0e0e0;
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 700px;
+  margin: 40px auto;
+  border-left: 6px solid #00ff6e;
+  font-family: 'Courier New', Courier, monospace;
+  box-shadow: 0 0 50px rgba(0, 255, 110, 0.1);
+  text-align: center;
+}
+
+.bb-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00ff6e;
+  text-shadow: 0 0 12px rgba(0, 255, 110, 0.4);
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.bb-title .element {
+  background: #00ff6e;
+  color: #000;
+  padding: 3px 6px;
+  border-radius: 4px;
+  margin-left: 4px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.bb-subtext {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.bb-subtext .green {
+  color: #00ff6e;
+  font-weight: bold;
+}
+
+.bb-note {
+  font-size: 0.95rem;
+  color: #aaa;
+  margin-top: 16px;
+  font-style: italic;
+}

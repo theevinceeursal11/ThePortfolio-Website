@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team Projects</title>
+  <link rel="stylesheet" href="services.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #f7f9fc;
+      font-family: 'Inter', sans-serif;
+      color: #222;
+      padding: 0;
+      margin: 0;
+    }
+
+    .main-container {
+      margin-top: 110px;
+      padding: 50px 20px;
+    }
+
+    .category-buttons {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .category-buttons button {
+      margin: 6px;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 20px;
+      background: #e1e7ff;
+      color: #3e4ef5;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(62, 78, 245, 0.08);
+      cursor: pointer;
+      transform: translateY(0);
+    }
+
+    .category-buttons button.active,
+    .category-buttons button:hover {
+      background: #3e4ef5;
+      color: #fff;
+
+      transform: translateY(-2px) scale(1.03); 
+      box-shadow: 0 8px 20px rgba(62, 78, 245, 0.2);
+    }
+
+    .project-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+    }
+
+    .project-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-body {
+      flex: 1;
+      padding: 20px 20px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .project-desc {
+      color: #555;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .tags span {
+      background: #eef1ff;
+      color: #3e4ef5;
+      font-size: 0.8rem;
+      padding: 5px 12px;
+      border-radius: 30px;
+      margin: 5px 5px 0 0;
+      display: inline-block;
+      font-weight: 500;
+    }
+
+    .modal-content {
+      border-radius: 16px;
+      padding: 20px;
+      animation: fadeIn 0.3s ease;
+      background: #fff;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .modal-img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .navbar {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 1rem 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 42px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .brand-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1c1c1c;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1c1c1c;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #007bff;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #007bff;
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links .cta {
+      background-color: #007bff;
+      color: #fff !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+    }
+
+    .nav-links .cta:hover {
+      background-color: #0056b3;
+    }
+
+    .menu-button {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: #111;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        background-color: #ffffff;
+        position: absolute;
+        top: 70px;
+        right: 15px;
+        width: 200px;
+        padding: 1rem;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 99;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="pictures/newlogo.png" alt="GoCreate Logo" class="logo" />
+      <span class="brand-name">GoCreate</span>
+    </a>
+    <button class="menu-button" onclick="document.getElementById('navMenu').classList.toggle('active')">☰</button>
+    <nav class="nav-links" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="aboutme.html">About Us</a>
+      <a href="contacts.html">Contact</a>
+      <a href="projects.html">Projects</a>
+      <a href="services.html">Services</a>
+      <a href="appointment.html" class="cta">Let’s Work Together</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container main-container">
+  <h2 class="text-center fw-bold mb-4">Our Team Projects</h2>
+
+  <div class="category-buttons">
+    <button class="active" onclick="filterProjects('all', event)">All</button>
+    <button onclick="filterProjects('web', event)">Web Development</button>
+    <button onclick="filterProjects('branding', event)">Graphics & Branding</button>
+    <button onclick="filterProjects('printing', event)">Printing Services</button>
+    <button onclick="filterProjects('upcoming', event)">Upcoming Projects</button>
+  </div>
+
+  <div class="row g-4" id="project-grid"></div>
+
+  <div id="no-projects-msg" class="text-center" style="display: none;">
+    <div class="bb-alert">
+      <div class="bb-title">[ LET HIM <span class="element">Co</span><span class="element">ok</span> ]</div>
+      <p class="bb-subtext">
+        We're still synthesizing some <span class="green">next-level</span> projects.<br>
+        Reactions are happening just need time for the perfect result.
+      </p>
+      <p class="bb-note">🚧 Soon, something explosive will drop. Stay tuned.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="projectModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <img id="modalImage" class="modal-img" src="" alt="Project Image">
+      <h4 class="modal-title" id="modalTitle"></h4>
+      <p class="project-desc" id="modalDesc"></p>
+      <p class="project-desc" id="modalInsight"></p>
+      <div class="tags" id="modalTags"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const webProjects = [
+    {
+      title: "CareerHatch Find Jobs Anywhere",
+      category: "web",
+      image: "pictures/helow.png",
+      desc: "CareerHatch connects job seekers from local workers to online freelancers with verified employers.",
+      insight: "Designed for safe, informed, and empowering job search experiences across industries.",
+      tags: ["#JobPlatform", "#WebDevelopment", "#HTML", "#CSS", "#Career"]
+    },
+    {
+      title: "GoCreate Portfolio Website",
+      category: "web",
+      image: "pictures/screenshot (496).png",
+      desc: "Official GoCreate portfolio built with HTML, CSS, and JS.",
+      insight: "Highlights our design style, creativity, and service quality.",
+      tags: ["#WebDev", "#GoCreate", "#CreativeDesign"]
+    },
+    {
+      title: "3D Asset Manager",
+      category: "web",
+      image: "pictures/screenshot (555).png",
+      desc: "Store, view, and control your 3D assets with ease.",
+      insight: "Fast loading, high-quality rendering, and flexible privacy options.",
+      tags: ["#3DAssets", "#CreativeTools", "#FastViewer"]
+    },
+    
+     {
+      title: "Web to Hell (play on Highway to Hell)",
+      category: "web",
+      image: "pictures/rockroll.png",
+      desc: "Power chords, broken code, and pure web mayhem.",
+      insight: "Inspired by the thunder of AC/DC, it’s web dev turned up to 11.",
+      tags: ["#RockNRoll", "#WebDesign", "#ElectricVibes"]
+    }
+  ];
+
+  const brandingProjects = [
+    {
+      title: "GoCreate Studio Logo",
+      category: "branding",
+      image: "pictures/newLogo.png",
+      desc: "Official logo design for GoCreate Studio.",
+      insight: "Crafted to reflect a clean, modern, and professional identity.",
+      tags: ["#Branding", "#LogoDesign", "#GoCreate"]
+    },
+    {
+      title: "Kindergarten Moving-Up Ceremony Event Design",
+      category: "branding",
+      image: "pictures/graphics.jpg",
+      desc: "A creative event design made for a kindergarten moving-up ceremony.",
+      insight: "We designed playful, colorful visuals to match the joyful celebration of the kids’ big milestone.",
+      tags: ["#EventDesign", "#KinderCeremony", "#CreativeGraphics"]
+    },
+    {
+      title: "Kindergarten Family Day Event Design",
+      category: "branding",
+      image: "pictures/comparza.png",
+      desc: "A joyful and colorful design created for a Kindergarten Family Day event.",
+      insight: "We crafted playful visuals that highlight togetherness, fun, and creativity.",
+      tags: ["#EventDesign", "#FamilyDay", "#KinderGraphics"]
+    },
+    
+  ]; // keep as is
+  const printingServices = [/* ... */]; // keep as is
+  const upcomingProjects = [];
+
+  const projects = [...webProjects, ...brandingProjects, ...printingServices, ...upcomingProjects];
+  const grid = document.getElementById("project-grid");
+  const modalElement = document.getElementById("projectModal");
+  const modal = new bootstrap.Modal(modalElement);
+  const noMsg = document.getElementById("no-projects-msg");
+
+  let currentProjects = [];
+
+  function renderProjects(list) {
+    currentProjects = list;
+    grid.innerHTML = "";
+    list.forEach((p, i) => {
+      const col = document.createElement("div");
+      col.className = "col-md-6 col-lg-4 project-item";
+
+      const card = document.createElement("div");
+      card.className = "project-card";
+      card.innerHTML = `
+          <img src="${p.image}" class="project-img" alt="${p.title}" />
+          <div class="project-body">
+            <div class="project-title">${p.title}</div>
+            <div class="project-desc">${p.desc}</div>
+            <div class="tags">${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
+        </div>
+      `;
+      card.addEventListener("click", () => openModal(i));
+      col.appendChild(card);
+      grid.appendChild(col);
+    });
+  }
+
+  function filterProjects(category, event) {
+    document.querySelectorAll(".category-buttons button").forEach(btn => btn.classList.remove("active"));
+    if (event && event.target) event.target.classList.add("active");
+
+    const filtered = category === "all" ? projects : projects.filter(p => p.category === category);
+    noMsg.style.display = filtered.length ? "none" : "block";
+    renderProjects(filtered);
+  }
+
+  function openModal(index) {
+    const p = currentProjects[index];
+    if (!p) return;
+    document.getElementById("modalTitle").innerText = p.title;
+    document.getElementById("modalImage").src = p.image;
+    document.getElementById("modalDesc").innerText = p.desc;
+    document.getElementById("modalInsight").innerText = p.insight;
+    document.getElementById("modalTags").innerHTML = p.tags.map(t => `<span>${t}</span>`).join("");
+    modal.show();
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    filterProjects("all");
+  });
+</script>
+</body>
+</html>

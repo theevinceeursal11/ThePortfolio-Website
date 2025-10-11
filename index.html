@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GoCreate</title>
+  <link rel="stylesheet" href="Style.css" />
+  <link rel="stylesheet" href="style.css?v=1.2">
+
+  <!-- Optional: add Google Fonts link for better typography -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<style>
+ /* CONTACT SECTION */
+.contact-section {
+  padding: 80px 20px;
+  background: linear-gradient(to bottom right, #ffffff, #f9fbfd);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* CONTAINER */
+.contact-container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 40px;
+  justify-items: center;
+}
+
+/* HEADING */
+.contact-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.via-text {
+  color: #007bff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* SUBTEXT */
+.contact-message {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+  max-width: 720px;
+  line-height: 1.8;
+}
+
+/* GRID */
+.contact-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* CARD */
+.contact-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border: 1px solid #e0e7ee;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 32px rgba(0, 123, 255, 0.1);
+  border-color: #dbeafe;
+}
+
+/* ICON */
+.contact-card .icon {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 14px;
+}
+
+/* CARD HEADINGS */
+.contact-card h3 {
+  font-size: 1.125rem;
+  color: #007bff;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+/* TEXT */
+.contact-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+/* LINK */
+.contact-card a {
+  font-size: 0.9rem;
+  color: #1c1c1c;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.contact-card a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  .contact-card {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .contact-card .icon {
+    font-size: 2.2rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.card-title {
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .headline {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: #777;
+    }
+
+    /* Autofit Grid */
+    .autofit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding: 0 2rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 1rem;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .card-title {
+      margin-top: 1rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    /* Modal Styling */
+    .modal {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.75);
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 12px;
+      max-width: 90%;
+      max-height: 90%;
+      overflow: auto;
+      position: relative;
+    }
+
+    .modal-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin: auto;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 8px;
+      right: 16px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      font-weight: bold;
+      color: #000;
+    }
+
+    #modalTitle {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+/* Services Section */
+.services-section {
+      padding: 60px 30px;
+    }
+
+    /* Owl Carousel Cards */
+    .owl-carousel .item {
+      width: 300px;
+      height: 350px;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      margin: 0 15px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .item.active {
+      width: 350px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .item-desc {
+      padding: 20px;
+      color: #333;
+      position: relative;
+      z-index: 1;
+    }
+
+    .item-desc .icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .item-desc h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 0 10px;
+    }
+
+    .item-desc p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0;
+      opacity: 1;
+    }
+
+    /* Owl Dots */
+    .owl-dots {
+      text-align: center;
+      margin-top: -20px;
+    }
+
+    .owl-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 6px;
+      background: #ccc;
+      transition: 0.3s;
+    }
+
+    .owl-dot.active {
+      background: #007bff;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .owl-carousel .item {
+        width: 240px;
+        height: 300px;
+      }
+
+      .item.active {
+        width: 280px;
+      }
+
+      .item-desc .icon {
+        font-size: 32px;
+      }
+
+      .item-desc h3 {
+        font-size: 18px;
+      }
+
+      .item-desc p {
+        font-size: 13px;
+      }
+    }
+    :root {
+  --bg: #ffffff;
+  --text: #222222;
+  --subtle: #666666;
+  --light: #f5f5f5;
+  --card-shadow: rgba(0, 0, 0, 0.04);
+  --accent: #0d6efd;
+}
+
+:root {
+  --bg: #f5f7fa;
+  --text: #1a1a1a;
+  --subtle: #6c757d;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+/* Section Styling */
+.section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 3rem 1rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.headline {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 1rem;
+  color: var(--subtle);
+}
+
+/* TEAM CARDS GRID */
+.team-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-items: center;
+}
+
+/* POLAROID-STYLE CARD */
+.card.polaroid {
+  background: #fdfdfd; /* slight off-white para di harsh */
+  padding: 0; /* remove inner spacing causing illusion of border */
+  border: none; /* remove any default border */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  width: 260px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* hide anything that might overflow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.card.polaroid img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 0; /* no border radius so edges are clean */
+  display: block;
+}
+
+
+/* HOVER EFFECT */
+.card.polaroid:hover {
+  transform: rotate(-1.5deg) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal */
+.services-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.services-modal.active {
+  display: flex;
+}
+
+.services-modal-content {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.services-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.services-modal-icon {
+  font-size: 3rem;
+  color: #0d6efd;
+  margin-bottom: 0.5rem;
+}
+
+/* Section Styling */
+    .section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .headline {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    /* Auto-fit Responsive Grid */
+    .autofit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      padding: 0 2rem;
+    }
+
+    /* Card Styles */
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px; /* Smaller image height */
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .card-title {
+      padding: 1rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    /* Modal Styling */
+    .modal {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 1rem;
+    }
+
+    .modal-content {
+      position: relative;
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 1rem;
+      max-width: 90%;
+      max-height: 90%;
+      overflow: auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .modal-content .card-title {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Responsive Tweaks */
+    @media (max-width: 500px) {
+      .headline {
+        font-size: 1.8rem;
+      }
+
+      .card-title {
+        font-size: 1rem;
+      }
+    }
+</style>
+
+<body>
+<!-- Header / Navbar -->
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand" aria-label="Home">
+      <img src="pictures/newlogo.png" alt="GoCreate Logo" class="logo" />
+      <span class="brand-name">GoCreate</span>
+    </a>
+
+    <button class="menu-button" aria-label="Toggle navigation menu">☰</button>
+
+    <nav class="nav-links" id="navMenu" role="navigation">
+      <a href="index.html">Home</a>
+      <a href="aboutme.html">About Us</a>
+      <a href="contacts.html">Contact</a>
+      <a href="projects.html">Projects</a>
+      <a href="services.html">Services</a>
+      <a href="appointment.html" class="cta">Let’s Work Together</a>
+    </nav>
+  </div>
+</header>
+  <main>
+    <section class="home" id="home">
+  <div class="home-content">
+    <div class="text">
+      <div class="text-one">Hey there,</div>
+      <div class="text-two">We’re <span class="highlight">GoCreateStudio</span></div>
+      <div class="text-three">
+        <strong>We turn ideas into real results.</strong><br />
+        No jargon. No hype. Just clear, honest work that gets done.<br />
+        We don't just fix problems — we make things better.
+      </div>
+      <p class="home-summary">
+        A small team that listens, builds with care, and focuses on what really matters.
+      </p>
+    </div>
+
+    <div class="home-actions">
+      <a href="appointment.html" class="about-btn">Let’s Work Together</a>
+      <a href="projects.html" class="about-btn secondary-btn">See Our Work</a>
+    </div>
+  </div>
+
+  <!-- 🌊 Animated Wave Background -->
+     <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+        </defs>
+        <g class="wave1">
+          <use xlink:href="#wave-path" x="50" y="3"></use>
+        </g>
+        <g class="wave2">
+          <use xlink:href="#wave-path" x="50" y="0"></use>
+        </g>
+        <g class="wave3">
+          <use xlink:href="#wave-path" x="50" y="9"></use>
+        </g>
+      </svg>
+
+</section>
+
+    
+    <section class="about-us-section" id="about">
+      <div class="about-container">
+        <div class="about-image">
+          <img src="pictures/newlogo.png" alt="GoCreate Team at Work">
+        </div>
+        <div class="about-text">
+          <h2>Why Choose GoCreateStudio?</h2>
+          <p>
+            We build websites, design logos, make social media posts, create posters, and even develop full systems. We take your ideas and turn them into real, working designs.
+          </p>
+          <p>
+            Our team is made of students and self-taught creators who love what we do. We work hard and give our best on every project, big or small.
+          </p>
+          <p>
+            You don’t need a big budget to get good results. You just need the right people. That’s where we come in. We are easy to work with, fast to respond, and serious about quality.
+          </p>
+          <p>
+            If you want something made with care and skill, GoCreateStudio is ready. Let’s work together and build something that really works.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    
+  
+<section class="project-process">
+  <h2>How We Work</h2>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-number">1</div>
+      <h3>We Plan</h3>
+      <p>First, we take the time to understand what you want to achieve. Then we map out a clear and realistic plan, so we all know where we’re going.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">2</div>
+      <h3>We Build</h3>
+      <p>Once the plan is set, we start building or designing your project in parts. This helps us stay focused, efficient, and ready to adjust if needed.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">3</div>
+      <h3>We Test</h3>
+      <p>Before we show anything to you, we make sure it works. We test every part so it runs smoothly and feels right.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">4</div>
+      <h3>You Review</h3>
+      <p>Once we’re ready, we’ll show you what we’ve done. You’ll get to check it, give feedback, and make sure everything is on track.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">5</div>
+      <h3>We Refine</h3>
+      <p>After your review, we fine-tune the work  improving and polishing it until it’s ready to go live and represent your brand well.</p>
+    </div>
+  </div>
+</section>
+<section class="section" id="highlights">
+  <h2 class="headline">Project Highlights</h2>
+  <p class="tagline">Click to view our best work</p>
+
+  <div class="autofit-grid">
+    <!-- Project Card 1 -->
+    <div class="card" onclick="openModal('pictures/screenshot (496).png', 'GoCreate Portfolio Website')">
+      <img src="pictures/screenshot (496).png" alt="GoCreate Portfolio Website" />
+      <h5 class="card-title">GoCreate Portfolio Website</h5>
+    </div>
+
+    <!-- Project Card 2 -->
+    <div class="card" onclick="openModal('pictures/helow.png', 'CareerHatch Job Platform')">
+      <img src="pictures/helow.png" alt="CareerHatch Job Platform" />
+      <h5 class="card-title">CareerHatch Job Platform</h5>
+    </div>
+
+    <!-- Project Card 3 -->
+    <div class="card" onclick="openModal('pictures/newlogo.png', 'GoCreate Logo Design')">
+      <img src="pictures/newlogo.png" alt="GoCreate Logo Design" />
+      <h5 class="card-title">GoCreate Logo Design</h5>
+    </div>
+
+    <!-- Project Card 4 -->
+    <div class="card" onclick="openModal('pictures/graphics-2.jpg', 'Kinder Ceremony Poster')">
+      <img src="pictures/graphics-2.jpg" alt="Kinder Ceremony Poster" />
+      <h5 class="card-title">Kinder Ceremony Poster</h5>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-btn" onclick="closeModal()">×</span>
+    <img id="modalImage" src="" alt="" />
+    <h5 id="modalTitle"></h5>
+  </div>
+</div>
+
+
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <h2 class="contact-title">Get in Touch <span class="via-text">with Us</span></h2>
+    <p class="contact-message">We’re excited to collaborate with you. Reach out through any of the channels below.</p>
+
+    <div class="contact-grid">
+      <!-- Facebook -->
+      <div class="contact-card">
+        <div class="icon">📘</div>
+        <h3>Facebook</h3>
+        <a href="https://www.facebook.com/gocreatestudio13" target="_blank" rel="noopener">Visit Page</a>
+      </div>
+
+      <!-- Instagram -->
+      <div class="contact-card">
+        <div class="icon">📸</div>
+        <h3>Instagram</h3>
+        <a href="https://www.instagram.com/gocreatestudio13" target="_blank" rel="noopener">Visit Profile</a>
+      </div>
+
+      <!-- Gmail (opens Gmail compose window) -->
+      <div class="contact-card">
+        <div class="icon">✉️</div>
+        <h3>Gmail</h3>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gocreatestudio13@gmail.com&su=Inquiry%20from%20Website&body=Hello%20GoCreateStudio%20team%2C%20I%20would%20like%20to..." 
+           target="_blank" 
+           rel="noopener">
+          Send Email via Gmail
+        </a>
+      </div>
+
+      <!-- Smart -->
+      <div class="contact-card">
+        <div class="icon">📱</div>
+        <h3>Smart</h3>
+        <a href="tel:09653070629">0965 307 0629</a>
+      </div>
+
+      <!-- Globe -->
+      <div class="contact-card">
+        <div class="icon">📲</div>
+        <h3>Globe</h3>
+        <a href="tel:09525434665">0952 543 4665</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <h1>Services</h1>
+  <p class="sub-title">Here’s how we help your ideas come to life</p>
+
+  <div class="services-grid">
+    <div class="card">
+      <div class="icon">💻</div>
+      <div class="card-title">Web Development</div>
+      <div class="card-desc">
+        We make clean, fast websites that work well on any device. Whether it’s a simple page or a full system, we can build it.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎨</div>
+      <div class="card-title">Graphics & Branding</div>
+      <div class="card-desc">
+        Need a logo or a social media post? We design stuff that looks good and feels right for your brand.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon">📢</div>
+      <div class="card-title">Ad Design & Creatives</div>
+      <div class="card-desc">
+        We make ads that people notice and connect with. Not just pretty — they get results too.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🤖</div>
+      <div class="card-title">AI Image Tools</div>
+      <div class="card-desc">
+        We use smart tools to make cool image stuff with AI. Sounds complicated, but we keep it simple for you.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏢</div>
+      <div class="card-title">Local Business Sites</div>
+      <div class="card-desc">
+        We build websites for local shops, clinics, and small businesses. Easy to use and ready to show up on Google.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon">📱</div>
+      <div class="card-title">Social Media Management</div>
+      <div class="card-desc">
+        Don’t know what to post? We can create and schedule content so your page stays active and grows over time.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌐</div>
+      <div class="card-title">Web Hosting</div>
+      <div class="card-desc">
+        We host your website so it stays online, secure, and fast. We’ll handle the tech so you don’t have to.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🛠️</div>
+      <div class="card-title">Site Maintenance</div>
+      <div class="card-desc">
+        Already have a site? We’ll help keep it running smoothly and updated, so you don’t need to worry about it.
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Modal -->
+  <div class="services-modal">
+    <div class="services-modal-content">
+      <button class="services-modal-close">×</button>
+      <div class="services-modal-icon"></div>
+      <h3 class="services-modal-title"></h3>
+      <p class="services-modal-desc"></p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+    
+   <!-- Testimonials Section -->
+<section class="testimonials-section">
+  <h1 class="main-title">What Our Clients Say</h1>
+  <p class="sub-title">We don’t have client reviews yet, but we’re ready to earn your trust.</p>
+
+  <div class="testimonials-container">
+    <div class="testimonial-card empty">
+      <p class="testimonial-text">
+        We're just getting started, so we don’t have testimonials yet.<br><br>
+        But we’re excited to work with you and your feedback might be the first one featured here.
+      </p>
+      <h4 class="testimonial-author">GoCreateStudio Team</h4>
+    </div>
+  </div>
+</section>
+
+    
+<section class="timeline-section" id="timeline">
+  <h2 class="main-title">Our Journey</h2>
+  <p class="sub-title">Milestones that shaped GoCreateStudio</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3 class="timeline-role">GoCreateStudio Was Born</h3>
+        <p class="timeline-company">GoCreate Team · Started June 2025</p>
+        <p class="timeline-description">
+          It all started with a few freelancers coming together with one goal: to build something real. We shared the same values, worked well as a team, and believed we could do good work for clients and communities.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-tagline">
+          <p class="footer-highlight">
+            We don’t just fix problems. We help improve everything we work on.
+          </p>
+        </div>
+      </div>
+  
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="Projects.html">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+  
+      <div class="footer-social">
+        <a href="https://github.com/yourusername" aria-label="GitHub" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn" target="_blank">LinkedIn</a>
+      </div>
+  
+      <p class="footer-copy">© 2025 GoCreate Studio. Let’s start building something great.</p>
+    </div>
+  </footer>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  // ✅ Helper to sanitize text input (prevent XSS)
+  function sanitizeHTML(str) {
+    const temp = document.createElement('div');
+    temp.textContent = str;
+    return temp.innerHTML;
+  }
+
+  // ✅ Reusable Modal Setup
+  function setupModal({
+    triggerSelector,
+    modalSelector,
+    closeSelector,
+    fillModal = () => {},
+    fade = true
+  }) {
+    const modal = document.querySelector(modalSelector);
+    const closeBtn = document.querySelector(closeSelector);
+
+    if (!modal) return;
+
+    // Open Modal
+    document.querySelectorAll(triggerSelector).forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        fillModal(trigger, modal);
+        if (!modal.classList.contains('active')) {
+          modal.classList.add('active');
+          if (fade) modal.classList.add('fade-in');
+        }
+      });
+    });
+
+    // Close Modal Button
+    closeBtn?.addEventListener('click', () => {
+      modal.classList.remove('active', 'fade-in');
+      document.querySelector('.site-content')?.classList.remove('blur');
+    });
+
+    // Click Outside Modal
+    window.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.classList.remove('active', 'fade-in');
+        document.querySelector('.site-content')?.classList.remove('blur');
+      }
+    });
+
+    // Close via Escape key
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        modal.classList.remove('active', 'fade-in');
+        document.querySelector('.site-content')?.classList.remove('blur');
+      }
+    });
+  }
+
+  // ✅ Setup Services Modal
+  setupModal({
+    triggerSelector: '#services .card',
+    modalSelector: '.services-modal',
+    closeSelector: '.services-modal-close',
+    fillModal: (card, modal) => {
+      modal.querySelector('.services-modal-title').textContent =
+        sanitizeHTML(card.querySelector('.card-title')?.textContent || '');
+      modal.querySelector('.services-modal-desc').textContent =
+        sanitizeHTML(card.querySelector('.card-desc')?.textContent || '');
+      modal.querySelector('.services-modal-icon').textContent =
+        sanitizeHTML(card.querySelector('.icon')?.textContent || '');
+    }
+  });
+
+  // ✅ Setup Team Modal
+  setupModal({
+    triggerSelector: '#team .card',
+    modalSelector: '.team-modal',
+    closeSelector: '.team-modal-close',
+    fillModal: (card, modal) => {
+      modal.querySelector('.team-modal-img').src = card.dataset.img || '';
+      modal.querySelector('.team-modal-name').textContent = sanitizeHTML(card.dataset.name || '');
+      modal.querySelector('.team-modal-role').textContent = sanitizeHTML(card.dataset.role || '');
+      modal.querySelector('.team-modal-bio').textContent = sanitizeHTML(card.dataset.bio || '');
+      document.querySelector('.site-content')?.classList.add('blur');
+    }
+  });
+
+  // ✅ Mobile Navbar Toggle
+  const menuButton = document.querySelector('.menu-button');
+  const navMenu = document.getElementById('navMenu');
+
+  menuButton?.addEventListener('click', () => {
+    navMenu?.classList.toggle('active');
+  });
+
+  // ✅ Open Image Modal
+  window.openModal = function (imageSrc, title) {
+    const modal = document.getElementById('imageModal');
+    if (!modal) return;
+    document.getElementById('modalImage').src = imageSrc;
+    document.getElementById('modalTitle').textContent = sanitizeHTML(title);
+    modal.style.display = 'flex';
+  };
+
+  // ✅ Close Image Modal
+  window.closeModal = function () {
+    const modal = document.getElementById('imageModal');
+    if (!modal) return;
+    modal.style.display = 'none';
+  };
+});
+
+  </script>
+</body>
+</html>

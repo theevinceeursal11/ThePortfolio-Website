@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GoCreateStudio - Services</title>
+  <link rel="stylesheet" href="/CSS/CSS/Style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #222;
+    }
+
+    main {
+      min-height: calc(100vh - 80px - 220px);
+      display: flex;
+      flex-direction: column;
+    }
+
+   
+    #services {
+      padding: 100px 1.5rem 3rem;
+      background: #fafafa;
+      text-align: center;
+    }
+
+    #services h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 0.5rem;
+    }
+
+    #services .sub-title {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Animation */
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 260px;
+      opacity: 0;
+      animation: fadeSlideUp 0.6s ease forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:nth-child(4) { animation-delay: 0.4s; }
+    .card:nth-child(5) { animation-delay: 0.5s; }
+    .card:nth-child(6) { animation-delay: 0.6s; }
+    .card:nth-child(7) { animation-delay: 0.7s; }
+    .card:nth-child(8) { animation-delay: 0.8s; }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 12px 24px rgba(0, 123, 255, 0.1);
+    }
+
+    .icon {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-desc {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    
+
+    .footer {
+      background-color: #000;
+      color: #f1f1f1;
+      padding: 30px 15px 20px;
+      text-align: center;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-highlight {
+      font-size: 20px;
+      font-weight: 600;
+      color: #f1f1f1;
+      margin: 0 auto 25px;
+      max-width: 700px;
+      line-height: 1.5;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-links,
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a,
+    .footer-social a {
+      color: #aaa;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.3s ease;
+      position: relative;
+    }
+
+    .footer-links a::after,
+    .footer-social a::after {
+      content: "";
+      display: block;
+      width: 0%;
+      height: 2px;
+      background: #007bff;
+      transition: width 0.3s ease;
+      margin: 4px auto 0;
+    }
+
+    .footer-links a:hover,
+    .footer-social a:hover {
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .footer-links a:hover::after,
+    .footer-social a:hover::after {
+      width: 50%;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: #777;
+      margin-top: 20px;
+      letter-spacing: 0.3px;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand" aria-label="Home">
+        <img src="/CSS/CSS/Pictures/NewLogo.png" alt="GoCreate Logo" class="logo" />
+        <span class="brand-name">GoCreate</span>
+      </a>
+  
+      <button class="menu-button" aria-label="Toggle navigation menu">☰</button>
+  
+      <nav class="nav-links" id="navMenu" role="navigation">
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">About Us</a>
+        <a href="contacts.html">Contact</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="appointment.html" class="cta">Let’s Work Together</a>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Services Section -->
+  <section id="services">
+    <h1>Services</h1>
+    <p class="sub-title">Here’s how we help your ideas take shape</p>
+    <div class="services-grid">
+      <div class="card"><div class="icon">💻</div><div class="card-title">Web Development</div><div class="card-desc">We build fast, clean, and responsive websites — from landing pages to full platforms.</div></div>
+      <div class="card"><div class="icon">🎨</div><div class="card-title">Graphics & Branding</div><div class="card-desc">Logos, branding kits, and everything visual that connects with your audience.</div></div>
+      <div class="card"><div class="icon">📢</div><div class="card-title">Ad Design & Creatives</div><div class="card-desc">We create visuals that get clicks, calls, and customers.</div></div>
+      <div class="card"><div class="icon">🤖</div><div class="card-title">AI Image Tools</div><div class="card-desc">Smart filters, recognition tools, or visual enhancements with AI? We got it.</div></div>
+      <div class="card"><div class="icon">🏢</div><div class="card-title">Local Business Sites</div><div class="card-desc">Easy-to-manage websites for clinics, shops, and service providers.</div></div>
+      <div class="card"><div class="icon">📱</div><div class="card-title">Social Media Management</div><div class="card-desc">We create, schedule, and grow your page while you run your business.</div></div>
+      <div class="card"><div class="icon">🌐</div><div class="card-title">Web Hosting</div><div class="card-desc">Secure, fast, and reliable hosting solutions set up for you.</div></div>
+      <div class="card"><div class="icon">🛠️</div><div class="card-title">Site Maintenance</div><div class="card-desc">Updates, backups, and monitoring handled by us so you can focus on work.</div></div>
+    </div>
+  </section>
+
+  
+</main>
+
+
+<script>
+  const menuButton = document.querySelector('.menu-button');
+  const navMenu = document.querySelector('#navMenu');
+
+  menuButton.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+</script>
+</body>
+</html>
